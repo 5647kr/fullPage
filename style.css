@@ -1,0 +1,94 @@
+html, body {
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  position: relative;
+}
+
+section {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  box-shadow: inset 0 0 10px red;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+section:not(:first-child) {
+  padding-top: 100px;
+}
+
+section h2 {
+  text-align: right;
+}
+
+.pageNav {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pageNav ul li {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  gap: 8px;
+  position: relative;
+}
+
+.pageNav ul li.active .navIcon {
+  background-color: #000;
+}
+
+.pageNav .navIcon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #000;
+  border-radius: 100%;
+}
+
+.pageNav .pageTitle {
+  width: max-content;
+  background-color: black;
+  border-radius: 6px;
+  color: white;
+  padding: 4px;
+  font-size: 12px;
+  position: absolute;
+  margin-left: 20px;
+  opacity: 0;
+}
+
+.pageNav .navIcon:hover {
+  cursor: pointer;
+}
+
+.pageNav .navIcon:hover + .pageTitle {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.pageNav.white ul li .navIcon {
+  border-color: #fff;
+}
+
+.pageNav.white ul li.active .navIcon {
+  background-color: #fff;
+}
