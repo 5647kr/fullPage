@@ -2,7 +2,7 @@ class Page {
   constructor() {
     const main = document.querySelector("main");
 
-    this.sections = main.querySelectorAll("section");
+    this.sections = document.querySelectorAll("section");
     this.pageNav = main.querySelector(".pageNav");
     this.navList = main.querySelectorAll(".pageNav ul li");
     this.navIcon = main.querySelectorAll(".pageNav ul li .navIcon");
@@ -28,7 +28,7 @@ class Page {
 
       setTimeout(() => {
         this.isScrolling = false;
-      }, 100);
+      }, 200);
     });
   }
 
@@ -72,11 +72,18 @@ class Page {
 
     this.navList[index].classList.add("active");
 
+    if (index === parseInt(this.navList.length - 1)) {
+      this.pageNav.style.display = "none";
+    } else {
+      this.pageNav.style.display = "block";
+    }
+
     if (index === 1 || index === 3) {
       this.pageNav.classList.add("white");
     } else {
       this.pageNav.classList.remove("white");
     }
+
   }
 }
 

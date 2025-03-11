@@ -1,6 +1,8 @@
-html, body {
-  overflow: hidden;
+/* 전체 스크롤바 숨기기 */
+::-webkit-scrollbar {
+  display: none;
 }
+
 
 * {
   margin: 0;
@@ -91,4 +93,20 @@ section h2 {
 
 .pageNav.white ul li.active .navIcon {
   background-color: #fff;
+}
+
+.pageNav.white ul li:last-child {
+  display: none;
+}
+
+.pageNav ul li:last-child {
+  display: none;
+}
+
+footer {
+  height: 300px;
+}
+
+footer section {
+  height: 100%;
 }
